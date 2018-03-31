@@ -1,10 +1,10 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import {createStore, compose, applyMiddleware} from 'redux';
-
 import ReactDOM from 'react-dom';
 import './index.css';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './components/App/App';
+// import rootReducer from './reducers'
 import registerServiceWorker from './registerServiceWorker';
 // import './components/Header/Header.css';
 import reducer from './reducers/chats';

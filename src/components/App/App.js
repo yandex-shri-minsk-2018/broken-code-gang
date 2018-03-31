@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Avatar } from '../Avatar/Avatar';
+import logo from './logo.svg';
 import './App.css';
-import { ChatListPage } from '../ChatListPage/ChatListPage';
+import Header from '../Header/Header.js';
+import { ChatPage } from '../ChatPage/ChatPage';
 
-function App() {
-  return (
-    <ChatListPage />
-  );
+class App extends Component {
+    render() {
+        return (
+            <ChatPage />
+        );
+    }
 }
 
 export default App;
