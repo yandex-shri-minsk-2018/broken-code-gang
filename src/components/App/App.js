@@ -1,11 +1,39 @@
 import React from 'react';
 import './App.css';
-import { ChatListPage } from '../ChatListPage/ChatListPage';
+import Header from '../Header/Header.js';
+import { ChatPage } from '../ChatPage/ChatPage';
+import { connect } from 'react-redux'
 
-function App() {
-  return (
-    <ChatListPage />
-  );
+import { AuthorizationPage } from "../AuthorizationPage/AuthorizationPage";
+import { ChatListPage } from "../ChatListPage/ChatListPage";
+
+
+const routeConfig = {
+    authorization: {
+        view: AuthorizationPage
+    },
+    'chat_list': {
+        view: ChatListPage
+    }
+};
+
+const stateToProps = (state) => ({
+    route: state.route,
+});
+
+
+class App extends Component {
+    render() {
+        let Page = routeConfig[this.props.route.page] && routeConfig[this.props.route.page].view;
+
+        if (!Page) {
+            Page = <div>404 Page Not Found</div>;
+        }
+
+        return (
+            <Page />
+        );
+    }
 }
 
-export default App;
+export default connect(stateToProps)(App);
