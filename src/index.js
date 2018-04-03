@@ -4,7 +4,7 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import combineReducers from './reducers/index'
+import rootReducer  from './reducers/index'
 import registerServiceWorker from './registerServiceWorker';
 
 import api from './api';
@@ -109,7 +109,7 @@ import api from './api';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-    combineReducers,
+    rootReducer,
     undefined,
     composeEnhancers(
         applyMiddleware(middleware)

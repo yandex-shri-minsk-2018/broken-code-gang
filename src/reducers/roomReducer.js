@@ -1,4 +1,4 @@
-export function roomReducer(state, action) {
+export default function roomReducer(state, action) {
    if (!state) {
        return {
            rooms: [{
