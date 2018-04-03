@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import route from './route';
 import messages from './messages';
-import roomReducer from './roomReducer'
+import rooms from './rooms'
 
 
 export default combineReducers({
-    roomReducer,
+    rooms,
     messages,
     route
 });

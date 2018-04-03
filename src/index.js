@@ -4,7 +4,7 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import rootReducer  from './reducers/index'
+import rootReducer  from './reducers'
 import registerServiceWorker from './registerServiceWorker';
 
 import api from './api';
