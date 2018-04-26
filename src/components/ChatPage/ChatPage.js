@@ -80,13 +80,14 @@ export class ChatPage extends Component {
     render() {
         const messages = this.props.messages.items,
             next = this.props.messages.next,
-            userId = this.props.userId;
+            userId = this.props.userId,
+            usersName = this.props.payload.usersName;
 
         let chatPageContent = '';
         if (messages && messages.length) {
             chatPageContent = messages.map(message => (
                 <div key={message._id}>
-                    <ChatField message={message} userId={userId} />
+                    <ChatField message={message} userId={userId} name={usersName[message.userId]}/>
                 </div>));
         } else {
             chatPageContent = <div className="ChatPage__empty"><p>No messages here yet...</p></div>;
