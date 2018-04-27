@@ -37,7 +37,7 @@ export const ChatList = connect(stateToProps)(class ChatList extends React.Compo
                 {rooms.map((room) => {
                     let roomName = room.name,
                         date = new Date();
-                    date.setTime(room.lastMessage.created_at);
+                    // date.setTime(room.lastMessage.created_at);
                     if (roomName.split(' ').includes(this.props.curUserInfo.name)) {
                         roomName = roomName.replace(this.props.curUserInfo.name, '');
                     }
@@ -51,8 +51,8 @@ export const ChatList = connect(stateToProps)(class ChatList extends React.Compo
                             },
                             title: `${roomName}`,
                             timestamp: `${createDateStamp(date)}`,
-                            author: `${room.lastMessage.userName}`,
-                            description: `${room.lastMessage.message}`,
+                            //author: `${room.lastMessage.userName}`,
+                            //description: `${room.lastMessage.message}`,
                             id: `${room._id}`,
                         }}
                         onclick={this.enterRoom.bind(this)}
