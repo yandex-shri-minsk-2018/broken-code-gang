@@ -6,11 +6,15 @@ export default function fetchRooms() {
             const room = await api.getCurrentUserRooms(getState().rooms.next);
             const { items, next } = room;
             const end = !!(next);
+            console.log('142536');
+            /*
             for(let item of items){
                 let lastMessage = (await api.getLastRoomMessages(item._id)).items[0];
                 lastMessage.userName = (await api.getUser(lastMessage.userId)).name;
                 item.lastMessage = lastMessage;
             }
+            */
+            console.log(items);
             dispatch({
                 type: 'ROOMS_FETCH',
                 items,
