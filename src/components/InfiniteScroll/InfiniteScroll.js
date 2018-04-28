@@ -37,7 +37,17 @@ export class InfiniteScroll extends React.Component {
         document.removeEventListener('scroll', this.onScroll);
     }
 
+<<<<<<< 971a24b9707ac1157fd97bdc596dcca92381efc1
     componentDidUpdate() {
+=======
+    componentDidUpdate() {  
+        console.log(document.documentElement.scrollTop);
+        console.log(document.documentElement.scrollHeight);
+        console.log('\n');
+        if (document.documentElement.scrollTop+window.innerHeight + 254 >= document.documentElement.scrollHeight){
+            document.documentElement.scrollTop = document.documentElement.scrollHeight;
+        }     
+>>>>>>> Fix adding
         this.onScroll();
     }
 
