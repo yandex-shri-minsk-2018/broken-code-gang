@@ -59,6 +59,14 @@ export class ChatPage extends Component {
         }));
     }
 
+    componentDidMount() {
+        api.onMessage((message) => {
+            if(this.props.payload.currentRoom === message.roomId){
+                this.props.dispatch(addMessage(message));
+            }
+        });
+    }
+
     componentDidUpdate() {
         if (this.props.messages.items[this.props.messages.items.length - 1] !== this.lastMessage) {
             this.lastMessage = this.props.messages.items[this.props.messages.items.length - 1];
